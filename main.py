@@ -29,24 +29,26 @@ print("Your mission is to find the treasure.")
 start_stop = input("If you want to play type 'start'. if not type 'stop': ").lower()
 if start_stop == "start":
   choice1 = input('You\'re at a crossroad. Where do you want to go? Type "left" or "right": ').lower()
+  if choice1 == "right":
+   print("Game over!")
+  elif choice1 == "left":
+   print('You\'ve come to a lake. There is an island in the middle of the lake.')
+   choice2 = input('Type "wait" to wait for a boat. Type "swim" to swim across. ').lower()
+   if choice2 == "wait":
+     print('You arrive at the island unharmed. There is a house with 3 doors. One red, one yellow and one blue.')
+     choice3 = input('Which colour do you choose? ').lower()
+     if choice3 == "yellow":
+      print("You win!!! Bravo")
+     elif choice3 == "red":
+      print("It's a room full of fire. Game Over.")        
+     elif choice3 == "blue":
+      print("You enter a room of beasts. Game Over.")
+     else:
+      print("You chose a door that doesn't exist. Game Over.")
+   else:
+      print("Ooops. There are crocodile and you are eaten. Game over!")    
+  else:
+    print("You choose wrong way, game over!")
 else:
   print("Game over!")   
 
-if choice1 == "right":
-  print("Game over!")
-elif choice1 == "left":
-  print('You\'ve come to a lake. There is an island in the middle of the lake.')
-  choice2 = input('Type "wait" to wait for a boat. Type "swim" to swim across. ').lower()
-if choice2 == "wait":
-  print('You arrive at the island unharmed. There is a house with 3 doors. One red, one yellow and one blue.')
-  choice3 = input('Which colour do you choose? ').lower()
-else:
-  print("Ooops. There are crocodile and you are eaten. Game over!")
-if choice3 == "yellow":
-  print("You win!!! Bravo")
-elif choice3 == "red":
-  print("It's a room full of fire. Game Over.")        
-elif choice3 == "blue":
-  print("You enter a room of beasts. Game Over.")
-else:
-  print("You chose a door that doesn't exist. Game Over.")    
